@@ -160,3 +160,17 @@ function is_subcategory() {
     $category = get_category($cat);
     return ( $category->parent == '0' ) ? false : true;
 }
+
+function my_login_stylesheet() {
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/bootstrap.min.css');
+    wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/style-login.js' );
+	wp_enqueue_style( 'nodecasts-style', get_stylesheet_uri() );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+add_action('set_current_user', 'cc_hide_admin_bar');
+function cc_hide_admin_bar() {
+    if (!current_user_can('edit_posts')) {
+        show_admin_bar(false);
+    }
+}
