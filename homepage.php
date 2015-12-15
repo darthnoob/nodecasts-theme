@@ -35,6 +35,28 @@ get_header(); ?>
         </div>
     </div>
 </div>
+
+<h1 class="text-center">Features Series</h1>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center">
+        <div class="row">
+            <?php foreach (get_categories(array('include' => '12,9,10')) as $cat) : ?>
+                <div class="col-md-4">
+                    <a href="<?php echo get_category_link($cat->term_id); ?>">
+                        <div class="thumbnail">
+                            <img src="<?php echo z_taxonomy_image_url($cat->term_id); ?>" />
+                            <div class="caption"> 
+                                <h5 class="text-center"><?php echo $cat->cat_name; ?></h5>
+                                <p><?php echo $cat->description; ?></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
 <?php
 get_sidebar();
 get_footer();
