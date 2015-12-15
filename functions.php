@@ -154,3 +154,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function is_subcategory() {
+    $cat = get_query_var('cat');
+    $category = get_category($cat);
+    return ( $category->parent == '0' ) ? false : true;
+}

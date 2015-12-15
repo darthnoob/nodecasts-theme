@@ -45,7 +45,7 @@ get_header(); ?>
                         <div class="thumbnail">
                             <img src="<?php echo z_taxonomy_image_url($cat->term_id); ?>" />
                             <div class="caption"> 
-                                <h3 class="text-center"><?php echo $cat->cat_name; ?></h3>
+                                <h4 class="text-center"><?php echo $cat->cat_name; ?></h4>
                                 <p><?php echo $cat->description; ?></p>
                             </div>
                         </div>
