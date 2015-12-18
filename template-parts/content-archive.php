@@ -9,8 +9,8 @@
 
 ?>
 
-<?php the_title( '<a class="list-group-item" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?>
-
+<?php if (has_tag('free')) { $free =  '<span class="label label-success right">Free</span></a>'; } ?>
+<?php the_title( '<a class="list-group-item" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', ($free) ? $free : '</a>' ); ?>
 <span class="entry-content">
 <?php
     the_excerpt( sprintf(
@@ -23,5 +23,6 @@
 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nodecasts' ),
 	'after'  => '</div>',
     ) );
+
 ?>
 </span><!-- .entry-content -->

@@ -883,3 +883,9 @@ footer, .site:after {
     margin-top: 100px;
     background: #333;
 }
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
